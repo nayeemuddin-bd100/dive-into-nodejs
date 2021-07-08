@@ -1,0 +1,42 @@
+<%- include('../partials/header') %> <%- include('../partials/nav') %>
+
+<h1>Title: <%= title %></h1>
+<!-- comment2-> uporer title ta o amra dynamic data hishebe use korte pari mane title take chaile amra variable hishebe use korte pari . ei variable ta ashbe app.js tekee jekane render korsi sekane teke parametr hishebe patate pari .. ete kore render er porobotti parameter guloo dynamic data hishebe ekane ashbee! -->
+<h1>Ejs is an awesome template engine</h1>
+
+<p>
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae,
+  delectus?
+</p>
+
+<!-- comment1 -> dynamic data niye kaj korar jonno amader <%= %> ei tag use korte hoi . ekhnaee new Date ekta dynamic data ja js er code eta boshanoor jonno amra ei tag ta use korlam . 
+    -->
+<%= new Date().toString() %>
+
+<!-- Condition in ejs -->
+
+<!-- ekhane post akare je object ta ashbe setar upor vitti kore ekta post show korate chassi ei jonno js e amra script tag use kortam bt ekane script tag kaj korbena karon script tag only for frontend. script tag sudumatro browser e kaj korbe server e kaj korbe na-->
+
+<!-- jokon amra kono logical code likbo ja browser e show korabonooo ei doroner code guloo <%  %> ei tag eer modde likte hobe . r jokon show korabooo tkn <%=  %> ei tag use korte hobe  -->
+
+<% if(post.published) { %>
+<h3>Title: <%= post.title %></h3>
+<p>Body : <%= post.body %></p>
+<% } else { %>
+<h2>Post is not published</h2>
+<% } %>
+
+<!-- comment guid.md file e dewa ase -->
+
+<!-- loop in ejs -->
+<ul>
+  <% for( let i = 0; i < posts.length; i++ ) { %>
+  <li>
+    <h2><%= posts[i].title %> by <%= posts[i].author %></h2>
+  </li>
+  <% } %>
+</ul>
+
+<!-- comment in guid.md file -->
+
+<%- include('../partials/footer') %>
